@@ -3,8 +3,80 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Montserrat:ital,wght@0,600;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fonts -->
+
+    <!-- Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <!-- Icons -->
+
     <title>B&W Template</title>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <ul class="header__ul">
+            <li class="header__li">Home</li>
+            <li class="header__li">About Us</li>
+            <li class="header__li">Team</li>
+          </ul>
+          <img class="header__img" src="img/logo.png" alt="" />
+          <ul class="header__ul">
+            <li class="header__li">Services</li>
+            <li class="header__li">Blog</li>
+            <li class="header__li">Contact Us</li>
+          </ul>
+        </div>
+        <div class="header__burger">
+          <img class="header__img" src="img/logo.png" alt="" />
+          <div class="header__burger-menu">
+            <ion-icon
+              class="header__burger-icon"
+              name="menu-outline"
+            ></ion-icon>
+            <ul class="header__burger-ul">
+              <li class="header__li">Home</li>
+              <li class="header__li">About Us</li>
+              <li class="header__li">Team</li>
+              <li class="header__li">Services</li>
+              <li class="header__li">Blog</li>
+              <li class="header__li">Contact Us</li>
+              <hr />
+              <li class="header__li contact-li">
+                (+380) 95 - 64 - 65 - 365
+                <br /><br />(+380) 68 - 50 - 33 - 321<br /><br /><br /><br />bandwcompany@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="main-block">
+      <div class="container">
+        <div class="main-block__title">We build it with passion</div>
+        <div class="main-block__subtitle">
+          Just to be clear, we do this for fun not for you, just kidding.
+        </div>
+        <button class="main-block__button">READ MORE</button>
+      </div>
+    </div>
+    <div class="date-block"></div>
+    <script src="js/main.js"></script>
+  </body>
 </html>
