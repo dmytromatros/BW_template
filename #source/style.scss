@@ -246,7 +246,7 @@ $Merriweather: "Merriweather";
   min-height: 1332px;
   background-color: #1d1d1d;
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
   .container {
     display: flex;
     min-height: 1332px;
@@ -447,9 +447,12 @@ $Merriweather: "Merriweather";
   }
 
   &__inner {
+    position: relative;
     margin-top: 218px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
   &__small {
