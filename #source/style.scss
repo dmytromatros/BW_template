@@ -41,6 +41,7 @@ body {
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   background-color: #fff;
+  scroll-behavior: smooth;
 }
 
 input,
@@ -215,6 +216,8 @@ $Merriweather: "Merriweather";
     text-align: center;
     color: #1d1e1f;
     font-weight: 300;
+    animation: main-block-text-anim 1s ease-in-out;
+    animation-fill-mode: forwards;
   }
 
   &__subtitle {
@@ -226,6 +229,8 @@ $Merriweather: "Merriweather";
     text-align: center;
     color: #898888;
     margin-top: 5px;
+    animation: main-block-text-anim 1s ease-in-out;
+    animation-fill-mode: forwards;
   }
 
   &__button {
@@ -240,6 +245,8 @@ $Merriweather: "Merriweather";
     border: 1px solid #000;
     margin: auto;
     margin-top: 43px;
+    animation: main-block-text-anim 1.5s ease-in-out;
+    animation-fill-mode: forwards;
   }
 }
 .date-block {
@@ -250,6 +257,20 @@ $Merriweather: "Merriweather";
   .container {
     display: flex;
     min-height: 1332px;
+    .date-block__left {
+      .date-block__small {
+        transform: translateX(-500px);
+        opacity: 0;
+        transition: 0.5s;
+      }
+    }
+    .date-block__right {
+      .date-block__small {
+        transform: translateX(500px);
+        opacity: 0;
+        transition: 0.5s;
+      }
+    }
   }
   .date-block__container-small {
     display: none;
@@ -259,14 +280,17 @@ $Merriweather: "Merriweather";
     .date-block__small {
       display: flex;
       max-width: 100%;
+      transition: 0.5s;
       .date-block__small-text {
         max-width: 350px;
       }
       &:nth-child(1) {
+        transform: translate(500px);
         flex-direction: column;
         align-items: flex-start;
       }
       &:nth-child(2) {
+        transform: translate(-500px);
         flex-direction: column;
         align-items: flex-end;
         .date-block__small-text {
@@ -274,10 +298,12 @@ $Merriweather: "Merriweather";
         }
       }
       &:nth-child(3) {
+        transform: translate(500px);
         flex-direction: column;
         align-items: flex-start;
       }
       &:nth-child(4) {
+        transform: translate(-500px);
         flex-direction: column;
         align-items: flex-end;
         .date-block__small-text {
@@ -391,6 +417,9 @@ $Merriweather: "Merriweather";
 
   &__persone {
     width: 200px;
+    transform: translateY(200px);
+    transition: 0.5s;
+    opacity: 0;
     &:nth-child(2) {
       margin-top: 124px;
     }
@@ -537,6 +566,9 @@ $Merriweather: "Merriweather";
     flex-direction: column;
     align-items: center;
     gap: 12px;
+    transform: rotate(360deg);
+    opacity: 0;
+    transition: 0.5s;
     img {
     }
     span {
@@ -553,7 +585,9 @@ $Merriweather: "Merriweather";
     flex-direction: column;
     gap: 20px;
     max-width: max-content;
-    width: 770px;
+    width: 0;
+    transition: 0.5s;
+    opacity: 0;
     margin: auto;
     margin-top: 153px;
   }
@@ -569,8 +603,12 @@ $Merriweather: "Merriweather";
     letter-spacing: 0.3px;
     text-align: center;
     color: #898888;
+    &:focus {
+      box-shadow: 0 0 1px 1px #888;
+    }
   }
   &__textarea {
+    padding-top: 20px;
     resize: initial;
     width: 100%;
     height: 195px;
@@ -600,5 +638,24 @@ $Merriweather: "Merriweather";
   text-align: center;
   color: #3b3b3b;
 }
-
+.up-btn {
+  transform: translateX(999px);
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 50px;
+  cursor: pointer;
+  color: #898888;
+  transition: 0.5s;
+}
+@keyframes main-block-text-anim {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @import "_media";
