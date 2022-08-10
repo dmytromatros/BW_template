@@ -2,6 +2,8 @@
 burgerMenu();
 menu();
 animElement();
+readMoreButton();
+let body = document.querySelector("body");
 function burgerMenu() {
   let burgerBtn = document.querySelector(".header__burger-icon");
   let burgerUl = document.querySelector(".header__burger-ul");
@@ -81,7 +83,30 @@ function animElement() {
     });
     if (form.getBoundingClientRect().y < showHeight) {
       form.style.width = "770px";
+      form.style.minWidth = "100%";
       form.style.opacity = "1";
     }
+  });
+}
+function readMoreButton() {
+  let moreBtn = document.querySelector(".main-block__button");
+  let moreBlock = document.querySelector(".read-more-main");
+  let closeBtn = document.querySelector(".read-more-main__close");
+  let stepBtn = document.querySelectorAll(".steps-btn");
+  moreBtn.addEventListener("click", () => {
+    moreBlock.style.transform = "translate(0)";
+    body.style.overflow = "hidden";
+  });
+  closeBtn.addEventListener("click", () => {
+    moreBlock.style.transform = "translate(200%)";
+    body.style.overflow = "visible";
+  });
+  stepBtn.forEach((e) => {
+    e.addEventListener("click", () => {
+      e.classList.toggle("active-step-arrow");
+      e.parentElement.parentElement
+        .querySelector(".read-more-main__inner")
+        .classList.toggle("active-step");
+    });
   });
 }
