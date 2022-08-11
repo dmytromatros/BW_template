@@ -3,6 +3,7 @@ burgerMenu();
 menu();
 animElement();
 readMoreButton();
+teamHover();
 let body = document.querySelector("body");
 function burgerMenu() {
   let burgerBtn = document.querySelector(".header__burger-icon");
@@ -107,6 +108,17 @@ function readMoreButton() {
       e.parentElement.parentElement
         .querySelector(".read-more-main__inner")
         .classList.toggle("active-step");
+    });
+  });
+}
+function teamHover() {
+  let persone = document.querySelectorAll(".team-block__persone");
+  persone.forEach((e) => {
+    e.addEventListener("mouseover", () => {
+      e.classList.add("persone-hover");
+    });
+    e.addEventListener("mouseout", () => {
+      e.classList.remove("persone-hover");
     });
   });
 }

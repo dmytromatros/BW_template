@@ -535,6 +535,7 @@ h6 {
 
 .team-block__persone {
   width: 200px;
+  height: 350px;
   -webkit-transform: translateY(200px);
           transform: translateY(200px);
   -webkit-transition: 0.5s;
@@ -550,13 +551,79 @@ h6 {
   margin-top: 215px;
 }
 
+.team-block .team-block__persone-text {
+  display: none;
+}
+
+.team-block .persone-hover {
+  width: 230px;
+  height: 350px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  background-color: #fbfbfb;
+  -webkit-box-shadow: 0 10px 30px 2px rgba(0, 0, 0, 0.538);
+          box-shadow: 0 10px 30px 2px rgba(0, 0, 0, 0.538);
+  position: relative;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+}
+
+.team-block .persone-hover .team-block__img {
+  float: left;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+}
+
+.team-block .persone-hover .team-block__img img {
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+  width: 50px;
+}
+
+.team-block .persone-hover .team-block__name {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding-left: 10px;
+  font-size: 140%;
+}
+
+.team-block .persone-hover .team-block__persone-text {
+  display: block;
+  color: #383838;
+  font-family: "Roboto";
+  line-height: 150%;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.team-block .persone-hover .team-block__social-media {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  margin-left: -10px;
+}
+
 .team-block__img {
   text-align: center;
 }
 
 .team-block__img img {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
+  width: 170px;
 }
 
 .team-block__name {
@@ -588,6 +655,10 @@ h6 {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 14px;
+}
+
+.team-block__social-media img {
+  cursor: pointer;
 }
 
 .provide-block {
@@ -849,13 +920,14 @@ h6 {
   height: 100%;
   -webkit-clip-path: polygon(65% 0, 200% 0, 200% 200%, 0 200%, 0 65%);
           clip-path: polygon(65% 0, 200% 0, 200% 200%, 0 200%, 0 65%);
-  background-color: #2e2e2e;
+  background-image: url("../img/city-back.jpg");
+  background-size: cover;
+  background-position: bottom;
   position: relative;
   top: 0;
   right: 0;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding-bottom: 50px;
 }
 
 .read-more-main__close {
@@ -892,6 +964,7 @@ h6 {
 }
 
 .read-more-main .container {
+  padding-bottom: 50px;
   padding-top: 120px;
   padding-right: 50px;
   float: right;
@@ -905,6 +978,8 @@ h6 {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(112, 76, 76, 0.8)));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(112, 76, 76, 0.8) 100%);
 }
 
 .read-more-main .title {
@@ -930,8 +1005,8 @@ h6 {
   min-height: 50px;
   border-radius: 5px;
   margin-top: 15px;
-  border: 2px solid #999;
-  background-color: #777;
+  background: -webkit-gradient(linear, left top, right top, from(#a3ff97), to(#fca0e4));
+  background: linear-gradient(90deg, #a3ff97 0%, #fca0e4 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -944,6 +1019,20 @@ h6 {
           flex-direction: column;
   padding-left: 15px;
   padding-right: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.read-more-main__list-small::before {
+  content: "";
+  background-color: #dbdada;
+  position: absolute;
+  width: 99%;
+  height: 90%;
+  left: 0.5%;
+  top: 5%;
+  z-index: -1;
+  border-radius: 5px;
 }
 
 .read-more-main__small-title {
@@ -958,7 +1047,7 @@ h6 {
           justify-content: space-between;
   font-family: Montserrat;
   font-size: 20px;
-  color: #fff;
+  color: #595858;
   height: 50px;
 }
 
@@ -1054,6 +1143,9 @@ h6 {
 }
 
 @media (max-width: 1200px) {
+  .read-more-main .container {
+    padding-right: 25px;
+  }
   .container {
     padding: 0 25px;
   }

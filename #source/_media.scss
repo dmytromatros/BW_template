@@ -1,5 +1,10 @@
 // Container
 @media (max-width: 1200px) {
+  .read-more-main {
+    .container {
+      padding-right: 25px;
+    }
+  }
   .container {
     padding: 0 25px;
   }
@@ -49,7 +54,6 @@
     }
   }
 }
-
 @media (max-width: 800px) {
   .read-more-main {
     &__back {
