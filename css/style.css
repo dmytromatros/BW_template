@@ -870,6 +870,7 @@ h6 {
 }
 
 .contact-block__btn {
+  cursor: pointer;
   width: 100%;
   max-width: 770px;
   height: 52px;
