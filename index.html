@@ -294,20 +294,28 @@
             class="contact-block__input"
             type="text"
             placeholder="Full Name"
+            required
           />
           <input
             class="contact-block__input"
             type="email"
             placeholder="Email"
+            required
           />
-          <input class="contact-block__input" type="tel" placeholder="Number" />
+          <input
+            class="contact-block__input"
+            type="tel"
+            placeholder="Number"
+            required
+          />
 
           <textarea
             class="contact-block__textarea"
             placeholder="Write your Message here..."
+            required
           ></textarea>
 
-          <button class="contact-block__btn">Submit</button>
+          <input type="submit" class="contact-block__btn" value="Submit" />
         </form>
       </div>
     </div>
@@ -453,6 +461,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="thanks">
+      <span>Your message is sent!</span>
     </div>
     <ion-icon class="up-btn" name="chevron-up-circle-outline"></ion-icon>
     <script src="js/main.js"></script>

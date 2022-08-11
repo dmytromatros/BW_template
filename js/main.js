@@ -4,7 +4,7 @@ menu();
 animElement();
 readMoreButton();
 teamHover();
-
+thnksMessage();
 let body = document.querySelector("body");
 function burgerMenu() {
   let burgerBtn = document.querySelector(".header__burger-icon");
@@ -138,4 +138,37 @@ function teamHover() {
       });
     });
   }
+}
+function thnksMessage() {
+  let btnContact = document.querySelector(".contact-block__btn");
+  let error = document.querySelector(".thanks");
+  let inputs = document.querySelectorAll(".contact-block__input");
+  let textarea = document.querySelector(".contact-block__textarea");
+  let count = 0;
+  btnContact.addEventListener("click", () => {
+    for (let index = 0; index < inputs.length; index++) {
+      if (inputs[index].value == "") {
+        count = 1;
+        console.log(count + ` ${index}`);
+        break;
+      } else {
+        count = 0;
+        console.log(count);
+      }
+    }
+    if (count == 0 && textarea.value != "") {
+      btnContact.removeAttribute("type", true);
+      error.style.transform = "translateY(0)";
+      setTimeout(() => {
+        error.style.transform = "translateY(-100%)";
+      }, 1500);
+      inputs.forEach((e) => {
+        e.value = "";
+      });
+      textarea.value = "";
+    }
+    if (count != 0 && textarea.value == "") {
+      btnContact.setAttribute("type", "submit");
+    }
+  });
 }
