@@ -112,13 +112,32 @@ function readMoreButton() {
   });
 }
 function teamHover() {
+  console.log(window.innerWidth);
   let persone = document.querySelectorAll(".team-block__persone");
-  persone.forEach((e) => {
-    e.addEventListener("mouseover", () => {
-      e.classList.add("persone-hover");
+
+  if (window.innerWidth > 700) {
+    persone.forEach((e) => {
+      e.addEventListener("mouseover", () => {
+        e.classList.add("persone-hover");
+      });
+      e.addEventListener("mouseout", () => {
+        e.classList.remove("persone-hover");
+      });
     });
-    e.addEventListener("mouseout", () => {
-      e.classList.remove("persone-hover");
+  } else if (window.innerWidth <= 700) {
+    window.addEventListener("scroll", () => {
+      persone.forEach((e) => {
+        if (
+          e.getBoundingClientRect().y >
+            window.innerHeight - (window.innerHeight / 3) * 2.5 &&
+          e.getBoundingClientRect().y <
+            window.innerHeight - window.innerHeight / 3
+        ) {
+          e.classList.add("persone-hover");
+        } else {
+          e.classList.remove("persone-hover");
+        }
+      });
     });
-  });
+  }
 }
