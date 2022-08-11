@@ -124,6 +124,9 @@ $Merriweather: "Merriweather";
   letter-spacing: 0.52px;
   text-align: center;
   color: #989696;
+  a {
+    color: #989696;
+  }
   &__inner {
     display: flex;
     gap: 60px;

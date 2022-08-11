@@ -124,6 +124,10 @@ h6 {
   color: #989696;
 }
 
+.header a {
+  color: #989696;
+}
+
 .header__inner {
   display: -webkit-box;
   display: -ms-flexbox;

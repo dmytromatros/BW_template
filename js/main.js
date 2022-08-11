@@ -4,6 +4,7 @@ menu();
 animElement();
 readMoreButton();
 teamHover();
+
 let body = document.querySelector("body");
 function burgerMenu() {
   let burgerBtn = document.querySelector(".header__burger-icon");
@@ -34,9 +35,6 @@ function menu() {
       }
       if (e.classList.contains("menu-service")) {
         document.querySelector(".provide-title").scrollIntoView(true);
-      }
-      if (e.classList.contains("menu-blog")) {
-        document.querySelector(".contact-title").scrollIntoView(true);
       }
       if (e.classList.contains("menu-contact")) {
         document.querySelector(".contact-title").scrollIntoView(true);
